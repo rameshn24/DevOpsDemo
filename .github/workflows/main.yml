@@ -1,10 +1,12 @@
-            - name: Copy Directory
-  # You may pin to the exact commit or the version.
-  # uses: MadaraUchiha/copy-action@7ddff6fc153a2ea2cd0fb88ed9750544c051e399
-  uses: MadaraUchiha/copy-action@0.0.1
-  with:
-    # Source file
-    source: 
-    # Target file
-    target: 
-          
+steps:
+  - name: Checkout code
+    uses: [actions/checkout@v4](https://github.com)
+  - name: Copy file to destination
+    run: cp Source/Test.txt /to/destination/
+  - name: Commit and push changes
+    run: |
+      git config user.name "ramesh24"
+      git config user.email "action@github.com"
+      git add .
+      git commit -m "Automated file copy"
+      git push
