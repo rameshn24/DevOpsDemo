@@ -2,11 +2,11 @@ steps:
   - name: Checkout code
     uses: [actions/checkout@v4](https://github.com)
   - name: Copy file to destination
-    run: cp Source/Test.txt /to/destination/
+    run: cp Source/test.txt destination/TO/
   - name: Commit and push changes
     run: |
       git config user.name "ramesh24"
-      git config user.email "action@github.com"
+      git config user.email "n.ramesh.n@gmail.com"
       git add .
       git commit -m "Automated file copy"
       git push
